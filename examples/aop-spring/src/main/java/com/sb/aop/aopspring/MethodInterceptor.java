@@ -10,7 +10,7 @@ public class MethodInterceptor {
     @Around("execution(* com.sb.aop.aopspring.SomeAspectBean.someMethod())")
     public Object print(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("Interceptor method invoked BEFORE");
-        Object result = joinPoint.proceed();
+        var result = joinPoint.proceed();
         System.out.println("Interceptor method invoked AFTER");
         return result;
     }
